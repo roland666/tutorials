@@ -1,0 +1,13 @@
+<odoo>
+    <menuitem id="menu_cinema_root" name="Cinema"/>
+
+    <record id="action_cinema_movie" model="ir.actions.act_window">
+        <field name="name">Movies</field>
+        <field name="res_model">cinema.movie</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_cinema_movie" name="Movies" parent="menu_cinema_root" action="action_cinema_movie" sequence="10"/>
+    
+    <menuitem id="menu_cinema_settings" name="Settings" parent="menu_cinema_root" sequence="20"/>
+</odoo>

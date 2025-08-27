@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_cinema_movie_search" model="ir.ui.view">
+        <field name="name">cinema.movie.search</field>
+        <field name="model">cinema.movie</field>
+        <field name="arch" type="xml">
+            <search string="Property Search">
+                <field name="name"/>
+                <field name="average_rating" filter_domain="[('average_rating', '>=', self)]"/>
+                <field name="year" filter_domain="[('year', '=', self)]"/>
+                <field name="duration" filter_domain="[('duration', '>=', self)]"/>
+                <field name="genre_ids"/>
+                <field name="movie_person_ids"/>
+
+                <filter string="Recent" name="recent" domain="[('year', '>=', 2024)]"/>
+
+            </search>
+        </field>
+    </record>  
+</odoo>

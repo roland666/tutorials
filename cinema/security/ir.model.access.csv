@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cinema_movie_internal,access_cinema_movie_internal,model_cinema_movie,base.group_user,1,0,0,0
+access_cinema_genre_internal,access_cinema_genre_internal,model_cinema_genre,base.group_user,1,0,0,0
+access_cinema_production_company_internal,access_cinema_production_company_internal,model_cinema_production_company,base.group_user,1,0,0,0
+access_cinema_review_internal,access_cinema_review_internal,model_cinema_review,base.group_user,1,1,1,1
+access_cinema_person_internal,access_cinema_person_internal,model_cinema_person,base.group_user,1,0,0,0
+access_cinema_movie_person_internal,access_cinema_movie_person_internal,model_cinema_movie_person,base.group_user,1,0,0,0
+
+access_cinema_movie_admin,access_cinema_movie_admin,model_cinema_movie,base.group_system,1,1,1,1
+access_cinema_genre_admin,access_cinema_genre_admin,model_cinema_genre,base.group_system,1,1,1,1
+access_cinema_production_company_manager,access_cinema_production_company_manager,model_cinema_production_company,base.group_system,1,1,1,1
+access_cinema_review_admin,access_cinema_review_admin,model_cinema_review,base.group_system,1,1,1,1
+access_cinema_person_admin,access_cinema_person_admin,model_cinema_person,base.group_system,1,1,1,1
+access_cinema_movie_person_admin,access_cinema_movie_person_admin,model_cinema_movie_person,base.group_system,1,1,1,1
