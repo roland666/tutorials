@@ -1,0 +1,70 @@
+<odoo>
+    <record id="view_store_article_list" model="ir.ui.view">
+        <field name="name">store.article.list</field>
+        <field name="model">store.article</field>
+        <field name="arch" type="xml">
+            <list string="Articles">
+                <field name="name"/>
+                <field name="stock_quantity" decoration-danger="stock_quantity &lt;= 10" decoration-bf="stock_quantity== 0"/>
+                <field name="price"/>
+                <field name="discounted_price" decoration-danger="discount &gt; 0"/>
+                <field name="discount" decoration-danger="discount &gt; 0"/>
+                <field name="warranty_period"/>
+                <field name="category_ids" widget="many2many_tags"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_store_article_form" model="ir.ui.view">
+        <field name="name">store.article.form</field>
+        <field name="model">store.article</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="stock_quantity" decoration-danger="stock_quantity &lt;= 10" decoration-bf="stock_quantity== 0"/>    
+                        </group>
+                        <group>
+                            <field name="serial_number"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="category_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <group>
+                            <group>
+                                <field name="price"/>
+                                <field name="discounted_price" decoration-danger="discount &gt; 0"/>
+                            </group>
+                            <group>
+                                <field name="discount" decoration-danger="discount &gt; 0"/>
+                            </group>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="warranty_period"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                    <group>
+                        <button name="action_create_order"
+                                type="object"
+                                string="Create Order"/>
+                    </group>
+                </sheet>
+            </form>                
+        </field>
+    </record>
+
+    <record id="action_store_article" model="ir.actions.act_window">
+        <field name="name">Articles</field>
+        <field name="res_model">store.article</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_store_article" name="Articles" parent="menu_store_root" action="action_store_article" sequence="10"/>
+</odoo>

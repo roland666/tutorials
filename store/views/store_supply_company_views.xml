@@ -1,0 +1,53 @@
+<odoo>
+        <record id="view_store_supply_company_form" model="ir.ui.view">
+        <field name="name">store.supply.company.form</field>
+        <field name="model">store.supply.company</field>
+        <field name="arch" type="xml">
+            <form string="Supply Company Form">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" nolabel="1" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="supply_company_rating"/>                   
+                    </group>
+                    <notebook>
+                        <page string="Informations">
+                            <group>
+                                <group>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                    <field name="address"/>                            
+                                </group>
+                                <group>
+                                    <field name="contact_name"/>                            
+                                </group>
+                            </group>                            
+                        </page>
+                        <page string="Orders">
+                            <field name="order_ids" readonly="1">
+                                <list>
+                                    <field name="article_id"/>
+                                    <field name="total_amount"/>
+                                    <field name="order_date"/>
+                                    <field name="delivery_status"/>
+                                    <field name="delivery_company_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_store_supply_company" model="ir.actions.act_window">
+        <field name="name">Supply Companies</field>
+        <field name="res_model">store.supply.company</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_store_supply_company" name="Supply Company" parent="menu_store_settings" action="action_store_supply_company" sequence="42"/>
+</odoo>

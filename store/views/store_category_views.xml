@@ -1,0 +1,34 @@
+<odoo>
+    <record id="view_store_category_form" model="ir.ui.view">
+        <field name="name">store.category.form</field>
+        <field name="model">store.category</field>
+        <field name="arch" type="xml">
+            <form string="Category Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="Articles">
+                            <field name="article_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="stock_quantity"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_store_category" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="res_model">store.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_store_category" name="Categories" parent="menu_store_root" action="action_store_category" sequence="20"/>
+</odoo>

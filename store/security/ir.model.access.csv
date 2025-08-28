@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_store_article_internal,access_store_article_internal,model_store_article,base.group_user,1,0,0,0
+access_store_category_internal,access_store_category_internal,model_store_category,base.group_user,1,0,0,0
+access_store_delivery_company_internal,access_store_delivery_company_internal,model_store_delivery_company,base.group_user,1,0,0,0
+access_store_supply_company_internal,access_store_supply_company_internal,model_store_supply_company,base.group_user,1,0,0,0
+access_store_order_internal,access_store_order_internal,model_store_order,base.group_user,1,0,0,0
+
+access_store_article_admin,access_store_article_admin,model_store_article,base.group_system,1,1,1,1
+access_store_category_admin,access_store_category_admin,model_store_category,base.group_system,1,1,1,1
+access_store_delivery_company_admin,access_store_delivery_company_admin,model_store_delivery_company,base.group_system,1,1,1,1
+access_store_supply_company_admin,access_store_supply_company_admin,model_store_supply_company,base.group_system,1,1,1,1
+access_store_order_admin,access_store_order_admin,model_store_order,base.group_system,1,1,1,1
